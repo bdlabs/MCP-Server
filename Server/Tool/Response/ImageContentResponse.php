@@ -1,6 +1,6 @@
 <?php
 
-namespace MCP\Tools\Response;
+namespace MCP\Tool\Response;
 
 class ImageContentResponse implements ToolResponsable
 {

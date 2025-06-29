@@ -5,7 +5,7 @@
  * Time: 00:47
  */
 
-namespace MCP\Tools\Response;
+namespace MCP\Tool\Response;
 
 class AudioContentResponse implements ToolResponsable
 {

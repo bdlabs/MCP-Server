@@ -2,7 +2,7 @@
 
 namespace MCP\Server\Tool;
 
-use MCP\Tools\Response\ToolResponsable;
+use MCP\Tool\Response\ToolResponsable;
 
 interface ToolInterface
 {

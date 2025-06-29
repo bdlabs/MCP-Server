@@ -5,7 +5,7 @@
  * Time: 00:48
  */
 
-namespace MCP\Tools\Response;
+namespace MCP\Tool\Response;
 
 class ResourceContentResponse implements ToolResponsable
 {

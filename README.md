@@ -24,8 +24,8 @@ mcp-server/
 │       ├── AudioContentResponse.php        # Audio response
 │       └── ResourceContentResponse.php     # Resource response
 │
-├── Tools/
-│   └── ToolResponsable.php         # Interface for tool responses
+├── Tool/
+│   └── AbstractTool.php            # Abstract for tools
 │
 ├── MCPServer.php                   # Main server class
 ├── MCPServerBuilder.php            # Builder for easy server creation
@@ -66,7 +66,7 @@ A set of classes representing different types of tool responses:
 
 use MCP\MCPServer;
 use MCP\MCPServerBuilder;
-use MCP\Tools\MyCustomTool\Tool as MyCustomTool;
+use MCP\Tool\MyCustomTool\Tool as MyCustomTool;
 
 // Creating a server using the builder
 $server = (new MCPServerBuilder())
@@ -87,16 +87,17 @@ To create a new tool:
 ```php
 <?php
 
-namespace MCP\Tools\MyCustomTool;
+namespace MCP\Tool\MyCustomTool;
 
-use MCP\Server\Tools\ToolInterface;
-use MCP\Tools\ToolResponsable;
+use MCP\Tool\Response\ToolResponsable;
 
-class Tool implements ToolInterface
+class Tool extends AbstractTool
 {
-    public function getName(): string
+    public function __construct()
     {
-        return 'my_custom_tool';
+        $this->name = '';
+        $this->description = '';
+        $this->inputSchema = [];
     }
     
     public function execute(array $params): ToolResponsable

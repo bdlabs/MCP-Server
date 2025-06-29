@@ -1,9 +1,9 @@
 <?php
 
-namespace MCP\Tools;
+namespace MCP\Tool;
 
 use MCP\Server\Tool\ToolInterface;
-use MCP\Tools\Response\ToolResponsable;
+use MCP\Tool\Response\ToolResponsable;
 
 abstract class AbstractTool implements ToolInterface
 {

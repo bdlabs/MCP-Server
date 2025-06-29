@@ -35,8 +35,8 @@ class MCPServerBuilder
      */
     protected static function registerTools(ToolRegistry $toolRegistry): void
     {
-        $toolRegistry->register(new \MCP\Tools\Registration\Tool());
-        $toolRegistry->register(new \MCP\Tools\Demo01\Tool());
+        $toolRegistry->register(new \MCP\Tool\Registration\Tool());
+        $toolRegistry->register(new \MCP\Tool\Demo01\Tool());
     }
 
     /**

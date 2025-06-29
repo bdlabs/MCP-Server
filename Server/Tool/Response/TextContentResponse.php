@@ -5,7 +5,7 @@
  * Time: 00:32
  */
 
-namespace MCP\Tools\Response;
+namespace MCP\Tool\Response;
 
 /**
  * Class TextContent

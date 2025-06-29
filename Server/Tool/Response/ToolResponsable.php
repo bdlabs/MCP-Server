@@ -5,7 +5,7 @@
  * Time: 00:31
  */
 
-namespace MCP\Tools\Response;
+namespace MCP\Tool\Response;
 
 interface ToolResponsable
 {
