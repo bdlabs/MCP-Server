@@ -10,26 +10,35 @@ MCP Server is a powerful and flexible server solution that enables easy integrat
 mcp-server/
 ├── Server/
 │   ├── Registry/
-│   │   ├── MethodRegistry.php      # Registry of available API methods
-│   │   └── ToolRegistry.php        # Registry of available tools
+│   │   ├── MethodRegistry.php         # Registry of available API methods
+│   │   └── ToolRegistry.php           # Registry of available tools
 │   │
 │   ├── ResponseFormatter/
 │   │   ├── ResponseFormatterInterface.php  # Response formatter interface
 │   │   ├── JsonResponseFormatter.php       # JSON response formatter
 │   │   └── EventStreamResponseFormatter.php # Event stream formatter
 │   │
-│   └── Response/
-│       ├── TextContentResponse.php         # Text response
-│       ├── ImageContentResponse.php        # Image response
-│       ├── AudioContentResponse.php        # Audio response
-│       └── ResourceContentResponse.php     # Resource response
+│   ├── Tool/
+│   │   ├── Response/
+│   │   │   ├── ToolResponsable.php         # Tool response interface
+│   │   │   ├── TextContentResponse.php     # Text response
+│   │   │   ├── ImageContentResponse.php    # Image response
+│   │   │   ├── AudioContentResponse.php    # Audio response
+│   │   │   └── ResourceContentResponse.php # Resource response
+│   │   │
+│   │   └── ToolInterface.php          # Interface for tools
+│   ├── MCPServer.php                      # Main server class
+│   ├── MCPServerBuilder.php               # Builder for server instance creation
+│   ├── MCPServerMethodParams.php          # Server method parameters
 │
 ├── Tool/
-│   └── AbstractTool.php            # Abstract for tools
+│   ├── AbstractTool.php               # Abstract class for tools
 │
-├── MCPServer.php                   # Main server class
-├── MCPServerBuilder.php            # Builder for easy server creation
-└── MCPServerMethodParams.php       # Server method parameters
+├── LICENSE                            # Project license (GPL-3.0)
+├── README.md                          # Project documentation
+└── config.php                         # Application configuration
+└── index.php                          # Application entry point
+└── .gitignore                         # Git ignored files configuration
 ```
 
 ## Core Components
@@ -75,6 +84,11 @@ $server = (new MCPServerBuilder())
 
 // Running the server
 $server->handleRequest();
+```
+
+### Server run.
+```bash
+php -S localhost:9876 index.php
 ```
 
 ## Creating Custom Tools
