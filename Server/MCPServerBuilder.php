@@ -11,15 +11,21 @@ namespace MCP\Server;
 use MCP\Config;
 use MCP\Server\Registry\MethodRegistry;
 use MCP\Server\Registry\ToolRegistry;
+use MCP\Server\Tool\ToolInterface;
 
 class MCPServerBuilder
 {
-    public static function build(): MCPServer
+    /**
+     * @param ToolInterface[] $tools
+     *
+     * @return \MCP\Server\MCPServer
+     */
+    public static function build(array $tools): MCPServer
     {
         $toolRegistry = new ToolRegistry();
         $methodRegistry = new MethodRegistry();
 
-        self::registerTools($toolRegistry);
+        self::registerTools($toolRegistry, $tools);
         self::registerMethods($methodRegistry);
 
         return new MCPServer(
@@ -30,13 +36,15 @@ class MCPServerBuilder
 
     /**
      * @param \MCP\Server\Registry\ToolRegistry $toolRegistry
+     * @param ToolInterface[] $tools
      *
      * @return void
      */
-    protected static function registerTools(ToolRegistry $toolRegistry): void
+    protected static function registerTools(ToolRegistry $toolRegistry, array $tools): void
     {
-        $toolRegistry->register(new \MCP\Tool\Registration\Tool());
-        $toolRegistry->register(new \MCP\Tool\Demo01\Tool());
+        foreach ($tools as $tool) {
+            $toolRegistry->register($tool);
+        }
     }
 
     /**

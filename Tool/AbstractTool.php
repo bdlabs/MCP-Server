@@ -3,7 +3,7 @@
 namespace MCP\Tool;
 
 use MCP\Server\Tool\ToolInterface;
-use MCP\Tool\Response\ToolResponsable;
+use MCP\Server\Tool\Response\ToolResponsable;
 
 abstract class AbstractTool implements ToolInterface
 {
