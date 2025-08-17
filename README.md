@@ -79,8 +79,7 @@ use MCP\Tool\MyCustomTool\Tool as MyCustomTool;
 
 // Creating a server using the builder
 $server = (new MCPServerBuilder())
-    ->addTool(new MyCustomTool())
-    ->build();
+    ->build([new MyCustomTool()]);
 
 // Running the server
 $server->handleRequest();
