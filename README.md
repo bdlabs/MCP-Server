@@ -1,4 +1,6 @@
-# MCP Server - Modular Communication Protocol Server
+# MCP Server Framework - Modular Communication Protocol Server Framework
+
+![alt text](./assets/img.png)
 
 ## Overview
 
